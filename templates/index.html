@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Converter CSV To XML</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Converter CSV to XML</h1>
+        </div>
+    </header>
+    <main>
+        <div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input name="file" type="file" />
+                <br>
+                <button type="submit">Converter</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
