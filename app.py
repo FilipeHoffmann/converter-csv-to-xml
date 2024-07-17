@@ -2,9 +2,15 @@ from flask import Flask, request, render_template, send_file
 import csv
 import xml.etree.ElementTree as ET
 import os
+import json
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
+
+with open('config.json', 'r') as config_file:
+    config = json.load(config_file)
+    host = str(config.get('host'))
+    port = int(config.get('port'))
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -39,4 +45,4 @@ def convert_csv_to_xml(csv_filepath):
 
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    app.run(debug=True)
+    app.run(host=host, port=port)
