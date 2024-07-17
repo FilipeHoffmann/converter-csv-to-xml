@@ -22,12 +22,12 @@ def index():
     return render_template('index.html')
 
 def convert_csv_to_xml(csv_filepath):
-    root = ET.Element('root')
+    root = ET.Element('cargas')
 
     with open(csv_filepath, newline='') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for row in reader:
-            item = ET.SubElement(root, 'item')
+            item = ET.SubElement(root, 'carga')
             for key, val in row.items():
                 element = ET.SubElement(item, key)
                 element.text = val
