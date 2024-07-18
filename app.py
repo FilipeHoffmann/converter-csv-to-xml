@@ -35,7 +35,7 @@ def convert_csv_to_xml(csv_filepath):
         for row in reader:
             item = ET.SubElement(root, 'carga')
             for key, val in row.items():
-                element = ET.SubElement(item, key)
+                element = ET.SubElement(item, key.lower())
                 element.text = val
 
     tree = ET.ElementTree(root)
