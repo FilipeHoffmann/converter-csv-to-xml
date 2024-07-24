@@ -30,7 +30,7 @@ def index():
 def convert_csv_to_xml(csv_filepath):
     root = ET.Element('cargas')
 
-    with open(csv_filepath, newline='') as csvfile:
+    with open(csv_filepath, newline='', encoding='ISO-8859-1') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for row in reader:
             item = ET.SubElement(root, 'carga')
