@@ -24,8 +24,10 @@ Para começar a usar precisamos configurar a nossa máquina que iremos utilizar 
 
 ```
 {
-    "host": "INSERIR AQUI O IP DA MÁQUINA",
-    "port": INSERIR AQUI A PORTA QUE IRÁ UTILIZAR
+    "host": "INSERIR O IP DA MÁQUINA",
+    "port": INSERIR A PORTA DA MÁQUINA,
+    "root": "INSERIR A TAG PRINCIPAL DO XML",
+    "item": "INSERIR A TAG DE CADA ELEMENTO"
 }
 ```
 Após finalizar a configuração bastar executar o arquivo ```app.py```.
