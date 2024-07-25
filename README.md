@@ -17,6 +17,7 @@ Aplicação Web para converter um aquivo CSV para XML utilizando Python.
   ├── uploads
   ├── app.py
   ├── config.json
+  ├── requirements.txt
   └── README.md
 ```
 ## Como usar
