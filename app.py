@@ -11,6 +11,8 @@ with open('config.json', 'r') as config_file:
     config = json.load(config_file)
     host = str(config.get('host'))
     port = int(config.get('port'))
+    json_element = str(config.get('root'))
+    json_sub_element = str(config.get('item'))
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -28,12 +30,12 @@ def index():
     return render_template('index.html')
 
 def convert_csv_to_xml(csv_filepath):
-    root = ET.Element('cargas')
+    root = ET.Element(json_element)
 
     with open(csv_filepath, newline='', encoding='ISO-8859-1') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for row in reader:
-            item = ET.SubElement(root, 'carga')
+            item = ET.SubElement(root, json_sub_element)
             for key, val in row.items():
                 element = ET.SubElement(item, key.lower())
                 element.text = val
